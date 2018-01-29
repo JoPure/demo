@@ -105,7 +105,7 @@ demo里有这么一段代码,这是一个ul li,10个节点,
 
 ![](https://github.com/JoPure/demo/blob/master/gif/1.gif) 
 
-这是最初我弄的，没遇到事件委托的原理前，连动态我都是这么搞的，后来才知道会很拖慢速度 并且，也不好维护:anguished:	
+没遇到事件委托的原理前，连动态我也一直以为可以直接li节点操作，后来才知道会很拖慢速度 并且，也不好维护:anguished:	
 
 
 ```javascript
