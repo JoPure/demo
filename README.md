@@ -28,12 +28,11 @@
 ![](https://github.com/JoPure/demo/blob/master/gif/demo2.png)
 
 #### 2、获取dom的offset();
-   如图  zetpo 获取
-   
-![][https://github.com/JoPure/demo/blob/master/gif/demo3.png]
-     我们再试试jquery的 返回的是
-     
-![][https://github.com/JoPure/demo/blob/master/gif/demo4.png]
+如图  zetpo 获取  
+![](https://github.com/JoPure/demo/blob/master/gif/demo3.png)
+
+我们再试试jquery的 返回的是    
+![](https://github.com/JoPure/demo/blob/master/gif/demo4.png)
 
 zetpo获取dom.offset方法匹配元素在文档位置时，会返回height，left，top，width，
     jquery只有left，top
@@ -48,7 +47,7 @@ zetpo获取dom.offset方法匹配元素在文档位置时，会返回height，le
   
 jquery则正常使用  下文是获取select下拉框选中的文本
 
-![][https://github.com/JoPure/demo/blob/master/gif/demo5.png]
+![](https://github.com/JoPure/demo/blob/master/gif/demo5.png)
 
 
 ####  5、Zetpo不支持的选择器
