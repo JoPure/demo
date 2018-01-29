@@ -113,7 +113,7 @@
         console.log('宽度：' + $(".testJo").width());//输入102
         console.log('高度：' + $(".testJo").height());//输入202
     })
-    
+
 
 
     //  事件代理 找到父元素，添加监听器...
@@ -125,43 +125,41 @@
             console.log("List item ", e.target.id, " was clicked!");
         }
     });
-
-
-    //点击选中图标进行竞猜   直接li点击的
-    // $("#parent-list li").on("click", function () {
-    //     if (!$('.menu-bar li.active').hasClass("disClick")) {
-    //         if (pg_config.data.count < 5 && !$(this).hasClass("active")) {
-    //             pg_config.data.count++;
-    //             $(this).addClass("active");
-    //         } else if ($(this).hasClass("active")) {
-    //             $(this).removeClass("active");
-    //             pg_config.data.count--;
-    //         }
-    //     }
-    // });
-
     var pg_config = {
         data: {
             count: 0
         }
     }
 
+
+    //点击选中图标进行竞猜   直接li点击的
+//     $("#parent-list li").on("click", function () {
+//         if (!$('.menu-bar li.active').hasClass("disClick")) {
+//             if (pg_config.data.count < 5 && !$(this).hasClass("active")) {
+//                 pg_config.data.count++;
+//                 $(this).addClass("active");
+//             } else if ($(this).hasClass("active")) {
+//                 $(this).removeClass("active");
+//                 pg_config.data.count--;
+//             }
+//         }
+//     });
+
+
     //点击选中图标进行竞猜   事件代理
     $("#parent-list").on("click", function (e) {
         if (e.target.parentNode && e.target.parentNode.nodeName == "LI") {
             if (!$('.menu-bar li.active').hasClass("disClick")) {
-                if (pg_config.data.count < 5 && !$(this).hasClass("active")) {
+                if (pg_config.data.count < 5 && !$(e.target.parentNode).hasClass("active")) {
                     pg_config.data.count++;
                     $(e.target.parentNode).addClass("active");
-                } else if ($(this).hasClass("active")) {
+                } else if ($(e.target.parentNode).hasClass("active")) {
                     $(e.target.parentNode).removeClass("active");
                     pg_config.data.count--;
                 }
             }
         }
     });
-
-
 </script>
 </body>
 </html>
