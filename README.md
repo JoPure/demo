@@ -25,15 +25,15 @@
  `用zetpo会把border也计算上`,
  jquery则是正常输入width&height的设定值
 
-![][demo2]
+![](https://github.com/JoPure/demo/blob/master/gif/demo2.png)
 
 #### 2、获取dom的offset();
    如图  zetpo 获取
    
-![][demo3]
+![][https://github.com/JoPure/demo/blob/master/gif/demo3.png]
      我们再试试jquery的 返回的是
      
-![][demo3]
+![][https://github.com/JoPure/demo/blob/master/gif/demo4.png]
 
 zetpo获取dom.offset方法匹配元素在文档位置时，会返回height，left，top，width，
     jquery只有left，top
@@ -48,7 +48,7 @@ zetpo获取dom.offset方法匹配元素在文档位置时，会返回height，le
   
 jquery则正常使用  下文是获取select下拉框选中的文本
 
-![][demo3]
+![][https://github.com/JoPure/demo/blob/master/gif/demo5.png]
 
 
 ####  5、Zetpo不支持的选择器
@@ -104,10 +104,10 @@ jquery则正常使用  下文是获取select下拉框选中的文本
 
 demo里有这么一段代码,这是一个ul li,10个节点,
 
+![](https://github.com/JoPure/demo/blob/master/gif/1.gif) 
+
 这是最初我弄的，没遇到事件委托的原理前，连动态我都是这么搞的，后来才知道会很拖慢速度 并且，也不好维护:anguished:	
 
-
-![][demo6]
 
 ```javascript
 
