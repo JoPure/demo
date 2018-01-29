@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .testJo {
+            width: 100px;
+            height: 200px;
+            padding: 50px;
+            background: brown;
+            border: 1px solid white;
+        }
+
+        .b {
+            width: 100px;
+            height: 200px;
+            padding: 50px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="testJo a"></div>
+
+<!--事件代理测试-->
+<ul id="parent-test-list">
+    <li id="post-1">Item 1</li>
+    <li id="post-2">Item 2</li>
+    <li id="post-3">Item 3</li>
+    <li id="post-4">Item 4</li>
+    <li id="post-5">Item 5</li>
+    <li id="post-6">Item 6</li>
+</ul>
+
+<!--事件代理测试-->
+<section class="section section-2 ui-anim" id="index_2">
+    <div class="section-main" style="position: relative; width: 720px;padding-top: 18%">
+        <div class="act-box">
+            <ul id="parent-list">
+                <li class="act-item-1" data-index="0">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-2" data-index="1">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-3" data-index="2">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-4" data-index="3">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-5" data-index="4">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-6" data-index="5">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-7" data-index="6">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-8" data-index="7">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-9" data-index="8">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+                <li class="act-item-10" data-index="9">
+                    <div class="actItem-win"></div>
+                    <div class="actItem-active"></div>
+                    <div class="actItem-black"></div>
+                    <div class="actItem-out"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--<script src="js/zepto.min.js">-->
+<script src="js/jquery-1.12.0.min.js"></script>
+<script>
+
+
+    //  事件代理 找到父元素，添加监听器...
+    document.getElementById("parent-test-list").addEventListener("click", function (e) {
+        // e.target是被点击的元素!
+        // 如果被点击的是li元素
+        if (e.target && e.target.nodeName == "LI") {
+            // 找到目标，输出ID!
+            console.log("List item ", e.target.id, " was clicked!");
+        }
+    });
+
+
+    //点击选中图标进行竞猜   直接li点击的
+    // $("#parent-list li").on("click", function () {
+    //     if (!$('.menu-bar li.active').hasClass("disClick")) {
+    //         if (pg_config.data.count < 5 && !$(this).hasClass("active")) {
+    //             pg_config.data.count++;
+    //             $(this).addClass("active");
+    //         } else if ($(this).hasClass("active")) {
+    //             $(this).removeClass("active");
+    //             pg_config.data.count--;
+    //         }
+    //     }
+    // });
+
+    var pg_config = {
+        data: {
+            count: 0
+        }
+    }
+
+    //点击选中图标进行竞猜   事件代理
+    $("#parent-list").on("click", function (e) {
+        if (e.target.parentNode && e.target.parentNode.nodeName == "LI") {
+            if (!$('.menu-bar li.active').hasClass("disClick")) {
+                if (pg_config.data.count < 5 && !$(this).hasClass("active")) {
+                    pg_config.data.count++;
+                    $(e.target.parentNode).addClass("active");
+                } else if ($(this).hasClass("active")) {
+                    $(e.target.parentNode).removeClass("active");
+                    pg_config.data.count--;
+                }
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>
